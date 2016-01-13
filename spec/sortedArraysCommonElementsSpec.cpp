@@ -34,7 +34,7 @@ namespace spec
 			//int A[3] = { 1, 2, 3 }, B[3] = { 4, 5, 6 };
 			Assert::IsNull(sortedArraysCommonElements(A, 3, B, 3), L"No common elements Check failed.", LINE_INFO());
 		}
-
+		
 		TEST_METHOD(sameArray)
 		{
 			struct transaction A[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" } };
@@ -44,7 +44,7 @@ namespace spec
 			struct transaction *result = sortedArraysCommonElements(A, 3, A, 3);
 			Assert::IsTrue(compare(result, expected, 3), L"All common elements Check failed.", LINE_INFO());
 		}
-
+		
 		TEST_METHOD(radomCommonElements)
 		{
 			struct transaction A[5] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" }, { 40, "21-10-2006", "Fourth" }, { 50, "13-11-2007", "Fifth" } };
@@ -53,6 +53,6 @@ namespace spec
 			struct transaction expected[3] = { { 10, "09-10-2003", "First" } };
 			struct transaction *result = sortedArraysCommonElements(A, 5, B, 3);
 			Assert::IsTrue(compare(result, expected, 1), L"One common element Check failed.", LINE_INFO());
-		}
+		}	
 	};
 }

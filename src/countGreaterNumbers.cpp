@@ -75,8 +75,8 @@ int countGreaterNumbers(struct transaction *Arr, int len, char *date) {
 		int cur_mon = (Arr[i].date[3] - '0') * 10 + (Arr[i].date[4] - '0');
 		int cur_year = (Arr[i].date[6] - '0') * 1000 + (Arr[i].date[7] - '0') * 100 + (Arr[i].date[8] - '0') * 10 + (Arr[i].date[9] - '0');
 
-		if (!checkDate(cur_day, cur_mon, cur_year))		// Validating each and every date in a statement.  If we want we can skip this.
-			return NULL;
+		if (!checkDate(cur_day, cur_mon, cur_year))		// Validating each and every date in a statement.  If we want, we can skip this.
+			continue;
 
 		if (cnt > 0 || isGreater(end_day, end_mon, end_year, cur_day, cur_mon, cur_year)){		// cur_date > end_date
 			//return (len - i);			//We can write this statement, if we want to skip validating of each and every date in statement.
